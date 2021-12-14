@@ -1,0 +1,30 @@
+:root {
+  /* Colors */
+  --blk: #000;
+  --wht: #fff;
+  --brandG: #19e5a8;
+  --brightV: #9381ff;
+  --paleV: #bbb1f2;
+  --palerV: hsl(249, 41%, 72%);
+
+  /* Typography */
+  --main-font: ;
+  --alternative-font: ;
+
+  --text-large: 48px;
+  --text-medium: 30px;
+  --text-regular: 24px;
+  --text-small: 20px;
+  --text-xsmall: 16px;
+
+  /* Spacing */
+  --spacing-base: 4px;
+  --spacing-small: 8px;
+  --spacing-regular: 16px;
+  --spacing-medium: 24px;
+  --spacing-large: 36px;
+  --spacing-xlarge: 48px;
+  --spacing-2xlarge: 72px;
+  --spacing-3xlarge: 96px;
+  --spacing-4xlarge: 144px;
+}

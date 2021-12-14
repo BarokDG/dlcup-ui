@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DL Cup ─ Home/Table</title>
+  </head>
+
+  <link rel="stylesheet" href="./design_system.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    nav img {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+
+  <style>
+    @media screen and (max-width: 500px) {
+      nav {
+        height: 75px;
+        margin: auto;
+        background: var(--wht);
+
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-base);
+
+        padding: var(--spacing-regular) var(--spacing-small);
+      }
+
+      nav a {
+        flex-grow: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        gap: var(--spacing-small);
+        text-decoration: none;
+
+        transition: all 300ms;
+      }
+
+      nav span:not(.selected span) {
+        display: none;
+      }
+
+      nav .selected {
+        padding: var(--spacing-base) var(--spacing-small);
+        border-radius: 30px;
+        color: var(--brightV);
+        font-weight: bold;
+      }
+
+      main {
+        min-height: calc(100vh - 75px);
+        background: url("./background.png") no-repeat;
+        background-size: cover;
+      }
+
+      .logo {
+        width: 75px;
+        margin: var(--spacing-medium) var(--spacing-regular);
+      }
+    }
+  </style>
+
+  <body>
+    <div id="root">
+      <main>
+        <img class="logo" src="./logo-dl2.svg" alt="" />
+        <div class="table-container">
+          <table>
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </main>
+      <nav>
+        <a class="selected nav__table">
+          <img src="./Table.svg" alt="" />
+          <span>Table</span>
+        </a>
+        <a class="nav__fixtures">
+          <img src="./Fixtures.svg" alt="" />
+          <span>Fixtures</span>
+        </a>
+        <a class="nav__stats">
+          <img src="./Stats.svg" alt="" />
+          <span>Stats</span>
+        </a>
+        <a class="nav__about">
+          <img src="./About.svg" alt="" />
+          <span>About</span>
+        </a>
+      </nav>
+    </div>
+  </body>
+
+  <script>
+    const navItems = document.querySelectorAll("nav a");
+
+    navItems.forEach((item) => item.addEventListener("click", handleClick));
+
+    function handleClick(e) {
+      navItems.forEach((item) => item.classList.remove("selected"));
+      e.currentTarget.classList.add("selected");
+    }
+  </script>
+</html>
