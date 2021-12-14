@@ -15,8 +15,13 @@
       margin: 0;
     }
 
+    @font-face {
+      font-family: "BD Colonius";
+      src: url("./assets/BD-Colonius.otf");
+    }
+
     body {
-      font-family: sans-serif;
+      font-family: "BD Colonius", sans-serif;
     }
 
     nav img {
@@ -28,8 +33,12 @@
   <style>
     @media screen and (max-width: 500px) {
       nav {
+        position: fixed;
+        top: calc(100vh - 75px);
+        right: 0;
+        left: 0;
+
         height: 75px;
-        margin: auto;
         background: var(--wht);
 
         display: flex;
@@ -60,12 +69,12 @@
         padding: var(--spacing-base) var(--spacing-small);
         border-radius: 30px;
         color: var(--brightV);
-        font-weight: bold;
+        background: var(--paleG);
       }
 
       main {
-        min-height: calc(100vh - 75px);
-        background: url("./background.png") no-repeat;
+        min-height: 100vh;
+        background: url("./assets/background.png") no-repeat;
         background-size: cover;
       }
 
@@ -78,6 +87,24 @@
 
   <body>
     <div id="root">
+      <nav>
+        <a class="selected nav__table">
+          <img src="./assets/Table.svg" alt="" />
+          <span>Table</span>
+        </a>
+        <a class="nav__fixtures">
+          <img src="./assets/Fixtures.svg" alt="" />
+          <span>Fixtures</span>
+        </a>
+        <a class="nav__stats">
+          <img src="./assets/Stats.svg" alt="" />
+          <span>Stats</span>
+        </a>
+        <a class="nav__about">
+          <img src="./assets/About.svg" alt="" />
+          <span>About</span>
+        </a>
+      </nav>
       <main>
         <img class="logo" src="./logo-dl2.svg" alt="" />
         <div class="table-container">
@@ -87,24 +114,6 @@
           </table>
         </div>
       </main>
-      <nav>
-        <a class="selected nav__table">
-          <img src="./Table.svg" alt="" />
-          <span>Table</span>
-        </a>
-        <a class="nav__fixtures">
-          <img src="./Fixtures.svg" alt="" />
-          <span>Fixtures</span>
-        </a>
-        <a class="nav__stats">
-          <img src="./Stats.svg" alt="" />
-          <span>Stats</span>
-        </a>
-        <a class="nav__about">
-          <img src="./About.svg" alt="" />
-          <span>About</span>
-        </a>
-      </nav>
     </div>
   </body>
 
