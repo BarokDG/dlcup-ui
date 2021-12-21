@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DL Cup ─ Fixtures</title>
+  </head>
+
+  <link rel="stylesheet" href="./normalize.css" />
+  <link rel="stylesheet" href="./design_system.css" />
+  <link rel="stylesheet" href="./navbar.css" />
+  <link rel="stylesheet" href="./table.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <style>
+    .bueno {
+      --fclr: #7209b7;
+      --sclr: #560bad;
+      --tclr: #480ca8;
+      --ffclr: #f72585;
+    }
+
+    .blue {
+      --fclr: hsla(216, 100%, 10%, 1);
+      --sclr: hsla(210, 50%, 21%, 1);
+      --tclr: hsla(213, 24%, 57%, 1);
+      --ffclr: hsla(212, 33%, 81%, 1);
+      --fffclr: hsla(214, 35%, 93%, 1);
+    }
+
+    .purple {
+      --fclr: hsla(266, 100%, 10%, 1);
+      --sclr: hsla(260, 50%, 21%, 1);
+      --tclr: hsla(263, 24%, 57%, 1);
+      --ffclr: hsla(252, 33%, 81%, 1);
+      --fffclr: hsla(254, 35%, 93%, 1);
+    }
+
+    .green {
+      --fclr: hsla(166, 100%, 10%, 1);
+      --sclr: hsla(160, 50%, 21%, 1);
+      --tclr: hsla(163, 24%, 57%, 1);
+      --ffclr: hsla(152, 33%, 81%, 1);
+      --fffclr: hsla(154, 35%, 93%, 1);
+    }
+
+    .yellow {
+      --fclr: hsla(66, 100%, 10%, 1);
+      --sclr: hsla(60, 50%, 21%, 1);
+      --tclr: hsla(63, 24%, 57%, 1);
+      --ffclr: hsla(52, 33%, 81%, 1);
+      --fffclr: hsla(54, 35%, 93%, 1);
+    }
+
+    .red {
+      --fclr: hsla(6, 100%, 10%, 1);
+      --sclr: hsla(360, 50%, 21%, 1);
+      --tclr: hsla(3, 24%, 57%, 1);
+      --ffclr: hsla(352, 33%, 81%, 1);
+      --fffclr: hsla(354, 35%, 93%, 1);
+    }
+  </style>
+
+  <style>
+    section {
+      margin-block: var(--spacing-xlarge);
+    }
+
+    .gw-select {
+      display: flex;
+      margin-block: var(--spacing-regular);
+    }
+
+    .gw-select h2 {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    h2,
+    h3 {
+      font-family: var(--main-font);
+      color: var(--wht);
+    }
+
+    h3 {
+      font-weight: lighter;
+      font-size: var(--text-small);
+
+      margin-block: var(--spacing-regular);
+    }
+
+    .match,
+    .scoreline {
+      display: flex;
+    }
+
+    .match {
+      background: var(--wht);
+    }
+
+    summary {
+      display: block;
+    }
+
+    details {
+      margin-bottom: var(--spacing-small);
+      cursor: pointer;
+      font-family: var(--main-font);
+    }
+
+    details[open] .fixture-info {
+      border-bottom: 2px solid var(--wht);
+      -webkit-animation: sweep 200ms ease-in-out;
+      animation: sweep 200ms ease-in-out;
+    }
+
+    @-webkit-keyframes sweep {
+      0% {
+        opacity: 0;
+        margin-top: -10px;
+      }
+      100% {
+        opacity: 1;
+        margin-top: 0px;
+      }
+    }
+
+    @keyframes sweep {
+      0% {
+        opacity: 0;
+        margin-top: -10px;
+      }
+      100% {
+        opacity: 1;
+        margin-top: 0px;
+      }
+    }
+
+    .scoreline {
+      padding: 0.8rem 0.5rem;
+      background: var(--ffclr);
+      color: var(--sclr);
+
+      justify-content: space-between;
+      align-items: center;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    .decoration {
+      width: var(--spacing-medium);
+      background: var(--accentR);
+    }
+
+    strong {
+      font-size: var(--text-regular);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .fixture-info {
+      display: flex;
+      color: var(--wht);
+    }
+
+    .fixture-info div:not(.decoration) {
+      padding: var(--spacing-regular);
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    .fixture-info .decoration {
+      background: none;
+    }
+
+    .left {
+      text-align: right;
+    }
+  </style>
+
+  <body>
+    <div id="root">
+      <main>
+        <img class="logo" src="./assets/logo-dl2.svg" alt="" />
+        <div class="gw-select">
+          <img src="./assets/prev.svg" alt="" />
+          <h2>Gameweek 1</h2>
+          <img src="./assets/next.svg" alt="" />
+        </div>
+        <section>
+          <h3>Saturday April 31st</h3>
+          <details>
+            <summary>
+              <div class="match">
+                <div class="scoreline">
+                  <span>Electrical C</span>
+                  <strong>2</strong>
+                </div>
+                <div class="decoration"></div>
+                <div class="scoreline">
+                  <strong>4</strong>
+                  <span>IT</span>
+                </div>
+              </div>
+            </summary>
+            <div class="fixture-info">
+              <div class="left">
+                <ul>
+                  <li>Abenezer</li>
+                  <li>Biruk</li>
+                </ul>
+              </div>
+              <div class="decoration"></div>
+              <div class="right">
+                <ul>
+                  <li>Zekarias</li>
+                  <li>Beken x2</li>
+                  <li>Haben</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <div class="match">
+                <div class="scoreline">
+                  <span>Chemical</span>
+                  <strong>2</strong>
+                </div>
+                <div class="decoration"></div>
+                <div class="scoreline">
+                  <strong>1</strong>
+                  <span>Civil</span>
+                </div>
+              </div>
+            </summary>
+            <div class="fixture-info">
+              <div class="left">
+                <ul>
+                  <li>Amanuel T x2</li>
+                </ul>
+              </div>
+              <div class="decoration"></div>
+              <div class="right">
+                <ul>
+                  <li>Nathnael</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </section>
+        <section>
+          <h3>Sunday May 1st</h3>
+          <details>
+            <summary>
+              <div class="match">
+                <div class="scoreline">
+                  <span>Software</span>
+                  <strong>3</strong>
+                </div>
+                <div class="decoration"></div>
+                <div class="scoreline">
+                  <strong>0</strong>
+                  <span>Electrical B2</span>
+                </div>
+              </div>
+            </summary>
+            <div class="fixture-info">
+              <div class="left">
+                <ul>
+                  <li>Bemnet</li>
+                  <li>Biruk x2</li>
+                </ul>
+              </div>
+              <div class="decoration"></div>
+              <div class="right"></div>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <div class="match">
+                <div class="scoreline">
+                  <span>Biomed</span>
+                  <strong>2</strong>
+                </div>
+                <div class="decoration"></div>
+                <div class="scoreline">
+                  <strong>1</strong>
+                  <span>Chemical</span>
+                </div>
+              </div>
+            </summary>
+            <div class="fixture-info">
+              <div class="left">
+                <ul>
+                  <li>Mikiyas</li>
+                  <li>Sador</li>
+                </ul>
+              </div>
+              <div class="decoration"></div>
+              <div class="right">
+                <ul>
+                  <li>Amanuel T</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </section>
+      </main>
+      <nav>
+        <a class="nav__table" href="./index.html">
+          <img src="./assets/Table.svg" alt="" />
+          <span>Table</span>
+        </a>
+        <a class="selected nav__fixtures">
+          <img src="./assets/Fixtures.svg" alt="" href="./fixtures.html" />
+          <span>Fixtures</span>
+        </a>
+        <a class="nav__stats">
+          <img src="./assets/Stats.svg" alt="" />
+          <span>Stats</span>
+        </a>
+        <a class="nav__about">
+          <img src="./assets/About.svg" alt="" />
+          <span>About</span>
+        </a>
+      </nav>
+    </div>
+  </body>
+
+  <script>
+    const navItems = document.querySelectorAll("nav a");
+
+    navItems.forEach((item) => item.addEventListener("click", handleClick));
+
+    function handleClick(e) {
+      navItems.forEach((item) => item.classList.remove("selected"));
+      e.currentTarget.classList.add("selected");
+    }
+  </script>
+  <script>
+    let detailElems = document.querySelectorAll("details");
+
+    detailElems.forEach((elem) => {
+      elem.addEventListener("toggle", handleClick);
+    });
+
+    function handleClick(e) {
+      if (e.target.open) {
+        detailElems.forEach((elem) => {
+          if (elem != e.target) elem.open = false;
+        });
+      }
+    }
+  </script>
+</html>

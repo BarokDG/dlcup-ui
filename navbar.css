@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+nav img {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    padding: var(--spacing-small);
+    padding-bottom: var(--spacing-4xlarge);
+    min-height: 100vh;
+    background: url("./assets/background.png") no-repeat;
+    background-size: cover;
+  }
+
+  .logo {
+    width: 75px;
+    margin: var(--spacing-medium) var(--spacing-regular);
+    margin-left: 0;
+  }
+
+  nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    height: 75px;
+    background: var(--blk);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-base);
+
+    padding: var(--spacing-regular) var(--spacing-small);
+  }
+
+  nav a {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-small);
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: all 300ms;
+  }
+
+  nav span:not(.selected span) {
+    display: none;
+  }
+
+  nav .selected {
+    padding: var(--spacing-small);
+    border-radius: 20px;
+    color: var(--brightV);
+    border: 3px solid var(--brandG);
+
+    font-family: var(--alt-font);
+  }
+}

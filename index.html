@@ -9,161 +9,9 @@
 
   <link rel="stylesheet" href="./normalize.css" />
   <link rel="stylesheet" href="./design_system.css" />
+  <link rel="stylesheet" href="./navbar.css" />
+  <link rel="stylesheet" href="./table.css" />
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    nav img {
-      width: 20px;
-      height: 20px;
-    }
-  </style>
-
-  <style>
-    .table-container {
-      max-width: 100%;
-      overflow: auto;
-    }
-
-    table {
-      border-collapse: collapse;
-      font-family: var(--main-font);
-    }
-
-    th {
-      color: var(--wht);
-      font-weight: normal;
-      font-size: var(--text-xxsmall);
-      padding: var(--spacing-small) 0;
-    }
-
-    tbody tr {
-      background: var(--wht);
-      border-bottom: 2px dashed transparent;
-    }
-
-    tbody tr:first-child {
-      background: var(--brandG);
-    }
-
-    tbody tr:nth-child(n + 2):nth-child(-n + 5) {
-      background: var(--highlightT);
-    }
-
-    td {
-      font-size: var(--text-base);
-      padding: var(--spacing-regular);
-      padding-left: var(--spacing-small);
-      padding-right: var(--spacing-medium);
-      text-align: right;
-    }
-
-    td:nth-child(n + 1):nth-child(-n + 2) {
-      /* font-family: var(--test-font); */
-    }
-
-    th:nth-child(2) {
-      padding-left: var(--spacing-small);
-    }
-
-    td,
-    th {
-      white-space: nowrap;
-    }
-
-    td:last-child {
-      width: 140px;
-      display: inline-block;
-    }
-
-    th:first-child,
-    td:first-child {
-      position: sticky;
-      left: 0;
-      background: black;
-      color: white;
-    }
-
-    td > div,
-    th > div {
-      display: flex;
-      gap: var(--spacing-regular);
-    }
-
-    th:first-child {
-      padding: 0 var(--spacing-small);
-    }
-
-    th:first-child span:first-child,
-    td:first-child span:first-child {
-      width: 20px;
-    }
-  </style>
-
-  <style>
-    @media screen and (max-width: 500px) {
-      main {
-        padding: var(--spacing-small);
-        padding-bottom: var(--spacing-4xlarge);
-        min-height: 100vh;
-        background: url("./assets/background.png") no-repeat;
-        background-size: cover;
-      }
-
-      .logo {
-        width: 75px;
-        margin: var(--spacing-medium) var(--spacing-regular);
-        margin-left: 0;
-      }
-
-      nav {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-
-        height: 75px;
-        background: var(--blk);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: var(--spacing-base);
-
-        padding: var(--spacing-regular) var(--spacing-small);
-      }
-
-      nav a {
-        flex-grow: 1;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: var(--spacing-small);
-
-        cursor: pointer;
-        text-decoration: none;
-
-        transition: all 300ms;
-      }
-
-      nav span:not(.selected span) {
-        display: none;
-      }
-
-      nav .selected {
-        padding: var(--spacing-small);
-        border-radius: 20px;
-        color: var(--brightV);
-        border: 3px solid var(--brandG);
-
-        font-family: var(--alt-font);
-      }
-    }
-  </style>
 
   <body>
     <div id="root">
@@ -322,11 +170,11 @@
         </div>
       </main>
       <nav>
-        <a class="selected nav__table">
+        <a class="selected nav__table" href="./index.html">
           <img src="./assets/Table.svg" alt="" />
           <span>Table</span>
         </a>
-        <a class="nav__fixtures">
+        <a class="nav__fixtures" href="./fixtures.html">
           <img src="./assets/Fixtures.svg" alt="" />
           <span>Fixtures</span>
         </a>
