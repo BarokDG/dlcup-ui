@@ -43,10 +43,6 @@ td:last-child {
   text-align: center;
 }
 
-td:nth-child(n + 1):nth-child(-n + 2) {
-  /* font-family: var(--test-font); */
-}
-
 th:nth-child(2) {
   padding-left: var(--spacing-small);
 }

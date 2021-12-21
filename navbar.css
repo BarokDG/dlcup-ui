@@ -9,9 +9,13 @@ nav img {
 }
 
 @media screen and (max-width: 500px) {
+  #root {
+    font-family: var(--main-font);
+  }
+
   main {
     padding: var(--spacing-small);
-    padding-bottom: var(--spacing-4xlarge);
+    padding-bottom: var(--spacing-3xlarge);
     min-height: 100vh;
     background: url("./assets/background.png") no-repeat;
     background-size: cover;
@@ -25,6 +29,7 @@ nav img {
 
   nav {
     position: fixed;
+    z-index: 3;
     bottom: 0;
     width: 100%;
 
