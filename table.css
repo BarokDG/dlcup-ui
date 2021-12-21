@@ -12,7 +12,11 @@ th {
   color: var(--wht);
   font-weight: normal;
   font-size: var(--text-xxsmall);
-  padding: var(--spacing-small) 0;
+  text-align: center;
+}
+
+th:nth-child(8) {
+  text-align: right;
 }
 
 tbody tr {
@@ -25,15 +29,18 @@ tbody tr:first-child {
 }
 
 tbody tr:nth-child(n + 2):nth-child(-n + 5) {
-  background: var(--highlightT);
+  background: var(--blk);
+  color: var(--brandG);
 }
 
 td {
   font-size: var(--text-base);
-  padding: var(--spacing-regular);
-  padding-left: var(--spacing-small);
-  padding-right: var(--spacing-medium);
   text-align: right;
+}
+
+td:nth-child(n + 4):nth-child(-n + 7),
+td:last-child {
+  text-align: center;
 }
 
 td:nth-child(n + 1):nth-child(-n + 2) {
@@ -47,6 +54,9 @@ th:nth-child(2) {
 td,
 th {
   white-space: nowrap;
+  padding: var(--spacing-regular);
+  padding-left: var(--spacing-small);
+  padding-right: var(--spacing-medium);
 }
 
 td:last-child {
