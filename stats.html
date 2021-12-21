@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DL Cup ─ Stats</title>
+  </head>
+
+  <link rel="stylesheet" href="./normalize.css" />
+  <link rel="stylesheet" href="./design_system.css" />
+  <link rel="stylesheet" href="./navbar.css" />
+  <link rel="stylesheet" href="./stats.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <body>
+    <div id="root">
+      <main>
+        <img class="logo" src="./assets/logo-dl2.svg" alt="" />
+        <div class="top_scorer">
+          <div class="header">
+            <h2>TOP<br />SCORERS</h2>
+            <img src="https://svgshare.com/i/czT.svg" alt="" />
+          </div>
+          <div class="standings">
+            <div>
+              <span>1</span>
+              <span>Beken</span>
+              <span>ITE</span>
+              <span>ST</span>
+              <span>9</span>
+            </div>
+            <div>
+              <span>2</span>
+              <span>Tesfahun</span>
+              <span>MEC</span>
+              <span>ST</span>
+              <span>8</span>
+            </div>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="most_cleansheets">
+          <div class="header--mc header">
+            <h2>Most<br />Cleansheets</h2>
+            <img src="https://svgshare.com/i/cy6.svg" alt="" />
+          </div>
+          <div class="standings--mc standings">
+            <div>
+              <span>1</span>
+              <span>Biomed</span>
+              <span>2</span>
+            </div>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </main>
+      <nav>
+        <a class="nav__table" href="./index.html">
+          <img src="./assets/Table.svg" alt="" />
+          <span>Table</span>
+        </a>
+        <a class="nav__fixtures" href="./fixtures.html">
+          <img src="./assets/Fixtures.svg" alt="" />
+          <span>Fixtures</span>
+        </a>
+        <a class="selected nav__stats" href="./stats.html">
+          <img src="./assets/Stats.svg" alt="" />
+          <span>Stats</span>
+        </a>
+        <a class="nav__about">
+          <img src="./assets/About.svg" alt="" />
+          <span>About</span>
+        </a>
+      </nav>
+    </div>
+  </body>
+
+  <script>
+    const navItems = document.querySelectorAll("nav a");
+
+    navItems.forEach((item) => item.addEventListener("click", handleClick));
+
+    function handleClick(e) {
+      navItems.forEach((item) => item.classList.remove("selected"));
+      e.currentTarget.classList.add("selected");
+    }
+  </script>
+  <script>
+    let detailElems = document.querySelectorAll("details");
+
+    detailElems.forEach((elem) => {
+      elem.addEventListener("toggle", handleClick);
+    });
+
+    function handleClick(e) {
+      if (e.target.open) {
+        detailElems.forEach((elem) => {
+          if (elem != e.target) elem.open = false;
+        });
+      }
+    }
+  </script>
+</html>
