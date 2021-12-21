@@ -68,8 +68,12 @@ th:first-child,
 td:first-child {
   position: sticky;
   left: 0;
-  background: black;
-  color: white;
+}
+
+th:first-child,
+tr:nth-child(n + 6) td:first-child {
+  background: var(--blk);
+  color: var(--wht);
 }
 
 td > div,
@@ -85,4 +89,13 @@ th:first-child {
 th:first-child span:first-child,
 td:first-child span:first-child {
   width: 20px;
+}
+
+tr:nth-child(1) td:first-child {
+  background: var(--brandG);
+}
+
+tr:nth-child(n + 2):nth-child(-n + 5) td:first-child {
+  background: var(--blk);
+  color: var(--brandG);
 }
