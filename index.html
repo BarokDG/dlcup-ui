@@ -7,22 +7,14 @@
     <title>DL Cup ─ Home/Table</title>
   </head>
 
+  <link rel="stylesheet" href="./normalize.css" />
   <link rel="stylesheet" href="./design_system.css" />
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
-    }
-
-    @font-face {
-      font-family: "BD Colonius";
-      src: url("./assets/BD-Colonius.otf");
-    }
-
-    body {
-      font-family: "BD Colonius", sans-serif;
     }
 
     nav img {
@@ -32,18 +24,110 @@
   </style>
 
   <style>
+    .table-container {
+      max-width: 100%;
+      overflow: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      font-family: var(--main-font);
+    }
+
+    th {
+      color: var(--wht);
+      font-weight: normal;
+      font-size: var(--text-xxsmall);
+      padding: var(--spacing-small) 0;
+    }
+
+    tbody tr {
+      background: var(--wht);
+      border-bottom: 2px dashed transparent;
+    }
+
+    tbody tr:first-child {
+      background: var(--brandG);
+    }
+
+    tbody tr:nth-child(n + 2):nth-child(-n + 5) {
+      background: var(--highlightT);
+    }
+
+    td {
+      font-size: var(--text-base);
+      padding: var(--spacing-small);
+      text-align: right;
+    }
+
+    td:nth-child(n + 1):nth-child(-n + 2) {
+      /* font-family: var(--test-font); */
+    }
+
+    th:nth-child(2) {
+      padding-left: var(--spacing-small);
+    }
+
+    td,
+    th {
+      white-space: nowrap;
+    }
+
+    td:last-child {
+      width: 140px;
+      display: inline-block;
+    }
+
+    th:first-child,
+    td:first-child {
+      position: sticky;
+      left: 0;
+      background: black;
+      color: white;
+    }
+
+    td > div,
+    th > div {
+      display: flex;
+      gap: var(--spacing-small);
+    }
+
+    th:first-child {
+      padding: 0 var(--spacing-small);
+    }
+
+    th:first-child span:first-child,
+    td:first-child span:first-child {
+      width: 20px;
+    }
+  </style>
+
+  <style>
     @media screen and (max-width: 500px) {
+      main {
+        padding: var(--spacing-small);
+        min-height: 100vh;
+        background: url("./assets/background.png") no-repeat;
+        background-size: cover;
+      }
+
+      .logo {
+        width: 75px;
+        margin: var(--spacing-medium) var(--spacing-regular);
+        margin-left: 0;
+      }
+
       nav {
         position: fixed;
-        top: calc(100vh - 75px);
-        right: 0;
-        left: 0;
+        bottom: 0;
+        width: 100%;
 
         height: 75px;
-        background: var(--wht);
+        background: var(--blk);
 
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: var(--spacing-base);
 
         padding: var(--spacing-regular) var(--spacing-small);
@@ -55,15 +139,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
         gap: var(--spacing-small);
+
+        cursor: pointer;
         text-decoration: none;
 
         transition: all 300ms;
-      }
-
-      nav a:active {
-        background: none;
       }
 
       nav span:not(.selected span) {
@@ -71,27 +152,172 @@
       }
 
       nav .selected {
-        padding: var(--spacing-base) var(--spacing-small);
-        border-radius: 30px;
+        padding: var(--spacing-small);
+        border-radius: 20px;
         color: var(--brightV);
-        background: var(--paleG);
-      }
+        border: 3px solid var(--brandG);
 
-      main {
-        min-height: 100vh;
-        background: url("./assets/background.png") no-repeat;
-        background-size: cover;
-      }
-
-      .logo {
-        width: 75px;
-        margin: var(--spacing-medium) var(--spacing-regular);
+        font-family: var(--alt-font);
       }
     }
   </style>
 
   <body>
     <div id="root">
+      <main>
+        <img class="logo" src="./assets/logo-dl2.svg" alt="" />
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <div><span>#</span><span>Team</span></div>
+                </th>
+                <th title="Matches Played">MP</th>
+                <th title="Points">Pts</th>
+                <th title="Wins">W</th>
+                <th title="Draws">D</th>
+                <th title="Losses">L</th>
+                <th>GF : GA</th>
+                <th title="Goal Difference">GD</th>
+                <th>Last 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div><span>1</span><span>IT</span></div>
+                </td>
+                <td>5</td>
+                <td>15</td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td>23:7</td>
+                <td>16</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <div><span>2</span><span>Biomed</span></div>
+                </td>
+                <td>6</td>
+                <td>12</td>
+                <td>4</td>
+                <td>0</td>
+                <td>2</td>
+                <td>23:10</td>
+                <td>13</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <div><span>3</span><span>Elec C</span></div>
+                </td>
+                <td>5</td>
+                <td>10</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>13:8</td>
+                <td>5</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <div><span>4</span><span>Chemical</span></div>
+                </td>
+                <td>6</td>
+                <td>10</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>16:16</td>
+                <td>0</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <div><span>5</span><span>Software</span></div>
+                </td>
+                <td>5</td>
+                <td>9</td>
+                <td>3</td>
+                <td>0</td>
+                <td>2</td>
+                <td>17:7</td>
+                <td>10</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <div><span>6</span><span>Mechanical</span></div>
+                </td>
+                <td>5</td>
+                <td>8</td>
+                <td>2</td>
+                <td>2</td>
+                <td>1</td>
+                <td>11:7</td>
+                <td>4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <div><span>7</span><span>Civil</span></div>
+                </td>
+                <td>5</td>
+                <td>6</td>
+                <td>2</td>
+                <td>0</td>
+                <td>3</td>
+                <td>11:15</td>
+                <td>-4</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <div><span>8</span><span>Elec B1</span></div>
+                </td>
+                <td>3</td>
+                <td>5</td>
+                <td>1</td>
+                <td>0</td>
+                <td>4</td>
+                <td>14:28</td>
+                <td>-14</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <div><span>9</span><span>Elec B2</span></div>
+                </td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>4</td>
+                <td>2:17</td>
+                <td>-15</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <div><span>10</span><span>Elec A</span></div>
+                </td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>4</td>
+                <td>5:21</td>
+                <td>-16</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
       <nav>
         <a class="selected nav__table">
           <img src="./assets/Table.svg" alt="" />
@@ -110,15 +336,6 @@
           <span>About</span>
         </a>
       </nav>
-      <main>
-        <img class="logo" src="./logo-dl2.svg" alt="" />
-        <div class="table-container">
-          <table>
-            <thead></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </main>
     </div>
   </body>
 
